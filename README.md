@@ -1,6 +1,13 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Organizer Application
 
-## Getting Started
+Description
+
+Features
+The Organizer Application
+Users can create, view and delete events.
+
+Priority Management:
+Users can set the priority of events.
 
 First, run the development server:
 
