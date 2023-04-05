@@ -1,12 +1,12 @@
 import { useQuery } from '@tanstack/react-query';
-import { apiTodo } from '@/lib/apiTodo';
+import { apiData } from '@/lib/apiData';
 
 const loadTodos = () => {
-  return apiTodo.get('/todos');
+  return apiData.get('/todos');
 };
 
 export const TodoGet = () => {
-  const { data, isLoading, error } = useQuery({
+  const { data, isLoading } = useQuery({
     queryFn: () => loadTodos(),
     queryKey: ['todos'],
   });

@@ -1,13 +1,13 @@
 import axios from 'axios';
 
-export const apiTodo = axios.create({
+export const apiData = axios.create({
     baseURL: 'http://localhost:3001',
     headers: {
     'Content-Type': 'application/json',
     },
   });
 
-  apiTodo.interceptors.response.use(
+  apiData.interceptors.response.use(
     (response) => {
     return response.data;
     },

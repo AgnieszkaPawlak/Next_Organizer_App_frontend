@@ -18,16 +18,12 @@ interface DataProps {
 const Todo = () => {
   // const todos = TodoGet();
   // console.log(todos);
-
   return (
     <>
       <Seo title="Todo" />
       <Navbar />
-      <div>
-        To do
-        {/* //TODO */}
-        {/* {
-    todos.map(el => <div key={el.id}>{el.id}</div>)} */}
+      <div className="flex h-[calc(100%-4rem)] items-center  justify-center">
+        <div>Work under construction.</div>
       </div>
     </>
   );
