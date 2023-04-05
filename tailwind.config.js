@@ -27,8 +27,9 @@ module.exports = {
       },
       backgroundImage: {
         'not-found': "url('/img/notFound.png')",
-        pins: "url('/img/pins-1280.png')",
+        pins: "url('/img/pins.png')",
         dairy: "url('/img/dairy.jpg')",
+        arm: "url('/img/arm.jpg')",
       },
     },
   },

@@ -7,7 +7,7 @@ import DateRangeForm from '@/components/input-form';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 
 import { Seo } from '@/components/seo';
-import { apiTodo } from '@/lib/apiTodo';
+import { apiData } from '@/lib/apiData';
 import { Navbar } from '@/components/navbar';
 
 const localizer = momentLocalizer(moment);
@@ -26,7 +26,7 @@ const MyCalendar = () => {
   const [allEvents, setAllEvents] = useState<Event[]>([]);
 
   const handleDeleteEvent = async (event: string) => {
-    await apiTodo.delete(`events/${event}`);
+    await apiData.delete(`events/${event}`);
   };
 
   useEffect(() => {
