@@ -9,7 +9,7 @@ export type ButtonProps = {
   onClick?: MouseEventHandler<HTMLButtonElement>;
 } & React.ComponentProps<'button'>;
 
-export const Button = ({ children, variants = 'main', size, onClick, ...props }: ButtonProps) => {
+export const Button = ({ children, variants = 'main', size, onClick }: ButtonProps) => {
   return (
     <button
       onClick={onClick}
@@ -17,7 +17,6 @@ export const Button = ({ children, variants = 'main', size, onClick, ...props }:
         ' border-sm hover:border-transparent m-auto  block rounded-lg border-black py-1 px-6',
         {
           'bg-dark-blue text-white  hover:bg-primary-blue hover:text-black': variants === 'main',
-
           'hover:border-transparent   hover:shadow-no-inset-box bg-primary-blue text-black  hover:bg-dark-blue hover:text-white ':
             variants === 'mainReverse',
           ' w-2/4 px-8 py-2 ': size === 'large',

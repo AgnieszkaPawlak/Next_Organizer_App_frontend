@@ -1,10 +1,10 @@
 import NextHead from 'next/head';
 
-export interface Seo {
+export interface SeoProps {
   title: string;
 }
 
-export const Seo = ({ title }: Seo) => {
+export const Seo = ({ title }: SeoProps) => {
   return (
     <NextHead>
       <title>{title}</title>

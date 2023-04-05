@@ -5,7 +5,7 @@ import 'react-datepicker/dist/react-datepicker.css';
 import { Button } from './button';
 import { Popup } from './popup';
 
-interface FormValues {
+interface InputFormProps {
   title: string;
   startDate: Date;
   endDate: Date;
@@ -24,13 +24,13 @@ const DateRangeForm = () => {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<FormValues>();
+  } = useForm<InputFormProps>();
   const [startDate, setStartDate] = useState<Date>(new Date());
   const [endDate, setEndDate] = useState<Date>(new Date());
-  const [showPopup, setShowPopup] = useState(false);
+  const [showPopup, setShowPopup] = useState<boolean>(false);
   const [error, setError] = useState<JSX.Element | null>(null);
 
-  const onSubmit = async (data: FormValues) => {
+  const onSubmit = async (data: InputFormProps) => {
     try {
       data.startDate = startDate;
       data.endDate = endDate;
@@ -106,7 +106,6 @@ const DateRangeForm = () => {
               minDate={startDate}
             />
           </label>
-
           <Button type="submit" variants="mainReverse" size="large">
             Submit
           </Button>

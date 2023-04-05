@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import { clsx } from 'clsx';
 
 import { Navbar } from '@/components/navbar';
 import { Seo } from '@/components/seo';
