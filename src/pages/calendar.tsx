@@ -4,10 +4,12 @@ import moment from 'moment';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 import { useState, useEffect } from 'react';
 import DateRangeForm from '@/components/input-form';
+import Modal from 'react-modal';
 
 import { apiData } from '@/lib/apiData';
 import { Seo } from '@/components/seo';
 import { Navbar } from '@/components/navbar';
+import { Button } from '@/components/button';
 
 const localizer = momentLocalizer(moment);
 
@@ -25,9 +27,8 @@ const MyCalendar = () => {
   const [allEvents, setAllEvents] = useState<Event[]>([]);
   const [events, setEvents] = useState<Event[]>(allEvents);
 
-  const handleDeleteEvent = async (event: string) => {
-    await apiData.delete(`events/${event}`);
-  };
+  const [showDeleteModal, setShowDeleteModal] = useState(false);
+  const [selectedEvent, setSelectedEvent] = useState<string | null>(null);
 
   const loadEvents = async () => {
     try {
@@ -44,13 +45,19 @@ const MyCalendar = () => {
     loadEvents();
   }, [events]);
 
+  const handleDeleteEvent = async () => {
+    const eventName = selectedEvent;
+    await apiData.delete(`events/${eventName}`);
+    setEvents(allEvents);
+    setShowDeleteModal(false);
+  };
+  const handleCancelDelete = () => {
+    setShowDeleteModal(false);
+  };
+
   const handleSelectEvent = (events: Event) => {
-    const confirmDelete = window.confirm('Are you sure you want to delete this event?');
-    if (confirmDelete) {
-      handleDeleteEvent(events.id);
-      setEvents(allEvents);
-    }
-    console.log(events.id, confirmDelete);
+    setSelectedEvent(events.id);
+    setShowDeleteModal(true);
   };
 
   const eventList = allEvents.map((event) => ({
@@ -96,6 +103,24 @@ const MyCalendar = () => {
             return { style: { backgroundColor, color } };
           }}
         />
+        <Modal
+          className="m-auto h-[30vh]  w-[96vw]  rounded-md bg-black "
+          isOpen={showDeleteModal}
+          onRequestClose={handleCancelDelete}
+          contentLabel="Delete Confirmation"
+        >
+          <p className="s py-6 text-center text-2xl text-white">
+            Do you want to delete this event?
+          </p>
+          <div className="mx-4 flex justify-around gap-8 py-12">
+            <Button size="medium" onClick={handleCancelDelete}>
+              Cancel
+            </Button>
+            <Button size="medium" onClick={handleDeleteEvent}>
+              Delete
+            </Button>
+          </div>
+        </Modal>
       </div>
     </>
   );
