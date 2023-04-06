@@ -46,7 +46,6 @@ const DateRangeForm = () => {
         throw new Error('Failed to submit form data');
       }
       setShowPopup(true);
-
       setFormData('');
     } catch (error) {
       console.error(error);

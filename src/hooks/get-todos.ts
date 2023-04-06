@@ -5,7 +5,7 @@ const loadTodos = () => {
   return apiData.get('/todos');
 };
 
-export const TodoGet = () => {
+export const TodosGet = () => {
   const { data, isLoading } = useQuery({
     queryFn: () => loadTodos(),
     queryKey: ['todos'],

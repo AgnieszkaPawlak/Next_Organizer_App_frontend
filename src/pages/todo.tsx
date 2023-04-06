@@ -1,6 +1,6 @@
 import { withPageAuthRequired } from '@auth0/nextjs-auth0';
 import { Seo } from '@/components/seo';
-// import { TodoGet } from '@/hooks/get-todos';
+import { TodosGet } from '@/hooks/get-todos';
 import { Navbar } from '@/components/navbar';
 
 interface Todos {
@@ -16,8 +16,8 @@ interface DataProps {
 }
 
 const Todo = () => {
-  // const todos = TodoGet();
-  // console.log(todos);
+  const todos = TodosGet();
+  console.log(todos.data);
   return (
     <>
       <Seo title="Todo" />
