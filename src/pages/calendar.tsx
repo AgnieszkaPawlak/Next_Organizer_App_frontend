@@ -75,7 +75,7 @@ const MyCalendar = () => {
     <>
       <Seo title="Calendar" />
       <Navbar />
-      <div>
+      <div className=" h-[calc(100%-20rem)]">
         <h1 className="my-2 mx-8 rounded-md bg-primary text-center">Calendar</h1>
         <DateRangeForm />
         <BigCalendar
@@ -89,9 +89,9 @@ const MyCalendar = () => {
           events={eventList}
           startAccessor="startDate"
           endAccessor="endDate"
-          style={{ height: '70vh', margin: '50px' }}
+          style={{ height: '90%', margin: ' 20px 50px' }}
           eventPropGetter={(eventList) => {
-            const backgroundColor = eventList.colorEvent ? eventList.colorEvent : 'primary-blue';
+            const backgroundColor = eventList.colorEvent;
             const color = eventList.color ? eventList.color : 'black';
             return { style: { backgroundColor, color } };
           }}
