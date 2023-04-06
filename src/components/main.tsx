@@ -13,7 +13,7 @@ export const Main = () => {
         <div className=" flex flex-1 overflow-hidden bg-pins bg-cover opacity-20 "></div>
         <div className=" flex-1 flex-row items-center justify-center">
           <div className=" flex h-[60%] flex-wrap justify-center text-dark-blue">
-            <h1 className="mt-6">App Organizer</h1>
+            <h1 className="mt-24 mb-4 text-6xl ">App Organizer</h1>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
               incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
