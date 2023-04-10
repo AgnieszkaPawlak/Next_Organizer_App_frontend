@@ -46,4 +46,4 @@ To run the application, execute the command:
 npm run start
 ```
 
-The website will be accessible at [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The website will be accessible at [http://localhost:3001](http://localhost:3000) with your browser to see the result.
