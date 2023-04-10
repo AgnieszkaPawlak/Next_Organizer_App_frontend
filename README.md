@@ -14,8 +14,7 @@ User can set the priority of events.
 
 ## 🎥 Demo
 
-You can watch the demo here :
-https://user-images.githubusercontent.com/105584932/230074592-c460d2a0-9a11-48cf-9077-7b96f0b836dc.mp4
+You can watch the demo here :[Demo](https://user-images.githubusercontent.com/105584932/230900552-aa6f76be-a9a2-4a8d-80d7-fa809ad6f832.mp4)
 
 ## 📋 Requirements
 
